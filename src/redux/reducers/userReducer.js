@@ -1,4 +1,4 @@
-const inititalState = { name: "User 1", age: 23 };
+const inititalState = { name: "User 1", age: 23, likesDogs: true };
 const addUserReducer = (state = inititalState, action) => {
   switch (action.type) {
     case "CHANGEUSERNAME": {
@@ -6,6 +6,9 @@ const addUserReducer = (state = inititalState, action) => {
     }
     case "CHANGEAGE": {
       return { ...state, age: action.payload };
+    }
+    case "CHANGELIKESDOGS": {
+      return { ...state, likesDogs: action.payload };
     }
   }
   return state;
